@@ -1,0 +1,820 @@
+﻿<html>
+    <head>
+        <meta charset="utf-8">
+        <title>词云</title>
+        <!--<script src='https://cdn.bootcss.com/echarts/3.7.0/echarts.simple.js'></script>-->
+        <script src='../src/echarts.js'></script>
+        <script src='../dist/echarts-wordcloud.js'></script>
+    </head>
+    <body>
+        <style>
+            body,head {
+                width: 100%;
+                height: 100%;
+                margin-top: 3%;
+                background-color:#393E42;
+            }
+            #main {
+                width: 100%;
+                height: 100%;
+                margin-top: 0%;
+                background-color:#393E42;
+            }
+            #btn{
+        position: fixed;
+        top:20px;
+        left:20px;
+    }
+        </style>
+        <div id='main'></div>
+        <div id="btn"><a href="Home.html"><img src="images/home.png" /></a></div>
+        <script>
+            var chart = echarts.init(document.getElementById('main'));
+            function createRandomItemStyle() {
+                return {
+                    normal: {
+                        color: 'rgb(' + [
+                            Math.round(Math.random() * 154 + 100),
+                            Math.round(Math.random() * 154 + 100),
+                            Math.round(Math.random() * 154 + 100)
+                        ].join(',') + ')'
+                    }
+                };
+            }
+            
+            option = {
+                // title: {
+                //     text: 'Google Trends',
+                //     link: 'http://www.google.com/trends/hottrends'
+                // },
+                
+                tooltip: {
+                    show: true
+                },
+                legend: {
+                    data: ['词云'],
+                    color:'#FFFFFF'
+                },
+                series: [{
+                   // name: 'xback',
+                    type: 'wordCloud',
+                    size: ['90%', '90%'],
+                    textRotation : [0, 45, 90, -45],
+                    textPadding: 0,
+                    autoSize: {
+                        enable: true,
+                        minSize: 14
+                    },
+                    data: [
+                        {
+                            name: "大家",
+                            value: 229,
+                            itemStyle: createRandomItemStyle()
+                            // itemStyle: {
+                            //     normal: {
+                            //         color: 'black'
+                            //     }
+                            // }
+                        },
+                        {
+                            name: "张艺兴",
+                            value: 211,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "你们",
+                            value: 203,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "努力努力再努力x",
+                            value: 190,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "一起",
+                            value: 136,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "谢谢",
+                            value: 117,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "我们",
+                            value: 116,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "努力",
+                            value: 108,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "电影",
+                            value: 108,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "音乐",
+                            value: 104,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "今天",
+                            value: 104,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "希望",
+                            value: 95,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "极限挑战",
+                            value: 93,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "快乐",
+                            value: 78,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "感谢",
+                            value: 71,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "中国",
+                            value: 65,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "开心",
+                            value: 50,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "黄渤",
+                            value: 48,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "加油",
+                            value: 46,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "一出好戏",
+                            value: 46,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "支持",
+                            value: 45,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "张艺兴工作室",
+                            value: 45,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "孙红雷",
+                            value: 43,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "期待",
+                            value: 43,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "黄磊",
+                            value: 42,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "喜欢",
+                            value: 41,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "羅志祥",
+                            value: 40,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "辛苦",
+                            value: 40,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "朋友",
+                            value: 38,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "生日快乐",
+                            value: 37,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "演员王迅",
+                            value: 34,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "艺兴",
+                            value: 34,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "舞蹈",
+                            value: 33,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "挑战",
+                            value: 31,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "谢谢你们",
+                            value: 31,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "从天儿降",
+                            value: 31,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "吃",
+                            value: 30,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "幸福",
+                            value: 30,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "祝福",
+                            value: 28,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "继续",
+                            value: 27,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "师父",
+                            value: 27,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "粉丝",
+                            value: 26,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "哥哥",
+                            value: 26,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "工作人员",
+                            value: 26,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "合作",
+                            value: 26,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "舞台",
+                            value: 25,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "青春制作人",
+                            value: 24,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "梦想",
+                            value: 23,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "咩",
+                            value: 23,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "好好",
+                            value: 22,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "!",
+                            value: 22,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "节目",
+                            value: 22,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "求婚大作战",
+                            value: 22,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "红雷哥",
+                            value: 21,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "致敬",
+                            value: 21,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "多多",
+                            value: 21,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "演员",
+                            value: 21,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "成长",
+                            value: 21,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "感恩",
+                            value: 21,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "哈哈",
+                            value: 21,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "先生",
+                            value: 20,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "雷朋",
+                            value: 20,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "青年",
+                            value: 19,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "掌眼",
+                            value: 19,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "小猪哥",
+                            value: 19,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "电视剧",
+                            value: 19,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "作品",
+                            value: 19,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "绵羊",
+                            value: 19,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "力量",
+                            value: 18,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "机会",
+                            value: 18,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "工作",
+                            value: 18,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "罗志祥",
+                            value: 18,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "诶",
+                            value: 18,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "平安",
+                            value: 18,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "前任",
+                            value: 18,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "活动",
+                            value: 17,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "恭喜",
+                            value: 17,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "SHEEP",
+                            value: 17,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "照顾",
+                            value: 17,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "娱乐",
+                            value: 17,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "付出",
+                            value: 17,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "哈哈哈",
+                            value: 16,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "为什么",
+                            value: 16,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "礼物",
+                            value: 16,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "2018",
+                            value: 16,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "羊",
+                            value: 16,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "兄弟",
+                            value: 16,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "大本营",
+                            value: 16,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "家族",
+                            value: 16,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "未来",
+                            value: 15,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "厉害",
+                            value: 15,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "黄金瞳",
+                            value: 15,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "渤哥",
+                            value: 15,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "陪伴",
+                            value: 15,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "祈祷",
+                            value: 15,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "帮助",
+                            value: 15,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "公益",
+                            value: 15,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "精彩",
+                            value: 15,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "冒险",
+                            value: 15,
+                            itemStyle: createRandomItemStyle()
+                        }, {
+                            name: "现场",
+                            value: 14,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "碧欧泉",
+                            value: 14,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "感动",
+                            value: 14,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "祖国",
+                            value: 14,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "相信",
+                            value: 14,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "生日",
+                            value: 14,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "演唱会",
+                            value: 13,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "惊喜",
+                            value: 13,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "亲爱",
+                            value: 13,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "兴迷",
+                            value: 13,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "命",
+                            value: 13,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "RLbMBib",
+                            value: 13,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "可爱",
+                            value: 12,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "超话",
+                            value: 12,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "家",
+                            value: 12,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "坚持",
+                            value: 12,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "休息",
+                            value: 12,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "节日快乐",
+                            value: 12,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "家人",
+                            value: 12,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "专辑",
+                            value: 12,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "大使",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "表演",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "成功",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "健康",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "偶像",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "点赞",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "回家",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "温暖",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "专属",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "雨林",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "外婆",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "CTO",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "Perrier",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "小绵羊",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "妈妈",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "sheep",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "麻烦",
+                            value: 11,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "荣幸",
+                            value: 10,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "永远",
+                            value: 10,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "团队",
+                            value: 10,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "青春有你",
+                            value: 10,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "蒙恬",
+                            value: 10,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "迅哥",
+                            value: 10,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "新年快乐",
+                            value: 10,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "姐",
+                            value: 10,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "歌曲",
+                            value: 10,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "家乡",
+                            value: 10,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "NAMANANA",
+                            value: 9,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "Xback",
+                            value: 9,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "男人帮",
+                            value: 9,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "可爱多",
+                            value: 9,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "奋斗",
+                            value: 8,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "兴迷们",
+                            value: 8,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "二胎",
+                            value: 8,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "520",
+                            value: 8,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "二爷",
+                            value: 8,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "EXO",
+                            value: 8,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "梦不落",
+                            value: 7,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "霸王龙",
+                            value: 7,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "李荣浩",
+                            value: 6,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "鼓励",
+                            value: 6,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "英雄",
+                            value: 6,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "首发",
+                            value: 6,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "演唱",
+                            value: 6,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "新歌",
+                            value: 6,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "师傅",
+                            value: 6,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "Sheep",
+                            value: 5,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "男团",
+                            value: 5,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "BAZAAR",
+                            value: 5,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "偶像练习生",
+                            value: 4,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "balance",
+                            value: 4,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "单身",
+                            value: 3,
+                            itemStyle: createRandomItemStyle()
+                        },
+                        {
+                            name: "兴",
+                            value: 9,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "老板",
+                            value: 9,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "nobody",
+                            value: 9,
+                            itemStyle: createRandomItemStyle()
+                        },{
+                            name: "回忆",
+                            value: 9,
+                            itemStyle: createRandomItemStyle()
+                        }
+                    ]
+                }]
+            };
+            chart.setOption(option);
+
+            window.onresize = chart.resize;
+        </script>
+    </body>
+</html>

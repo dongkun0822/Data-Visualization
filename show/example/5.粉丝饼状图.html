@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+       <title>粉丝性别</title>
+       
+   </head>
+   <body style="height: 100%; margin-top:4%;background-color:#393E42;">
+       <style type="text/css">
+           #btn {
+               position: fixed;
+               top: 20px;
+               left: 20px;
+           }
+       </style>
+       <div id="btn"><a href="Home.html"><img src="images/home.png" /></a></div>
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=iXC1GqPqUQNOgOUExYY3C5gjvC3opcK3"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    title : {
+        text: '',
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a}{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient: 'horizontal',
+        data: ['男', '女'],
+        textStyle: {
+            color: 'white',
+        }
+    },
+    series : [
+        {
+            name: ' ',
+            type: 'pie',
+            radius : '55%',
+            
+            data:[
+                {
+                    value: 9848,
+                    name: '男',
+                    itemStyle: {
+                        normal: {
+                            color: '#EC7452'
+                        },
+                    },
+                },
+                {
+                    value: 81076,
+                    name: '女',
+                    itemStyle: {
+                        normal: {
+                            color: '#E7C34B'
+                        },
+                    },
+                }
+            ],
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+       <title>粉丝年龄</title>
+       <style type="text/css">
+           #btn {
+               position: fixed;
+               top: 20px;
+               left: 20px;
+           }
+       </style>
+   </head>
+   <body style="height: 100%; margin-top: 2%;background-color:#393E42;">
+       <div id="btn"><a href="Home.html"><img src="images/home.png" /></a></div>
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=iXC1GqPqUQNOgOUExYY3C5gjvC3opcK3"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+    //title : {
+        //text: '努力努力再努力x的粉丝',
+        //subtext: '年龄段分布'
+    //},
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        data: ['年龄段的粉丝数目'],
+        textStyle: {
+            color: 'white',
+        }
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            dataView : {show: true, readOnly: false},
+            magicType : {show: true, type: ['line', 'bar']},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            data: [ '1984年', '1985年', '1986年', '1987年', '1988年', '1989年',
+                '1990年', '1991年', '1992年', '1993年', '1994年', '1995年', '1996年', '1997年', '1998年', '1999年',
+                '2000年', '2001年', '2002年', '2003年', '2004年', '2005年', '2006年', '2007年', '2008年', '2009年'],
+            axisLabel: {
+                color: 'white'
+            },
+            axisLine: {
+                lineStyle:{
+                    color: 'white'
+                }
+            },
+        }
+    ],
+    yAxis : [
+        {
+            type: 'value',
+            axisLabel: {
+                color: 'white'
+            },
+            axisLine: {
+                lineStyle: {
+                    color: 'white'
+                }
+            },
+        }
+    ],
+    series : [
+        {
+            name:'年龄段的粉丝数目',
+            type:'bar',
+            data: [ 151, 189, 293, 367, 478,
+                526, 1200, 2536, 1316, 1650, 2302, 3076, 3819, 4209, 4650,
+                4787,5243,3875,3524,2425,1935,911,338,133,88,33],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+            itemStyle: {
+                normal: {
+                    color: '#E7C34B',
+                }
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name: '平均值'}
+                ]
+            }
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

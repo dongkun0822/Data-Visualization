@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style type="text/css">
+    html,body{
+     margin: 0px 0px 0px 0px;
+     padding:0px 0px 0px 0px;
+     width: 100%;
+     height: 100%;
+}
+body{
+overflow:scroll;
+overflow-y:hidden;
+overflow-x:hidden;
+}
+    .mui-content{
+     margin: 0px 0px 0px 0px;
+     padding:0px 0px 0px 0px;
+     background: bottom center no-repeat #efeff4 ;
+     background-size: 100% 100%;
+     width: 100%;
+     height: 100%;
+}
+    </style>
+</head>
+<body>
+    <img src="images/background.jpg " class="mui-content" usemap="#Mapl">
+<map name="Mapl" id="CribMap">
+    <area shape="rect" coords="1100,60,1470,130" href="1.图片.html" onFocus="this.blur();">
+    <area shape="rect" coords="1000,200,1470,270" href="2.词云.html" onFocus="this.blur();">
+    <area shape="rect" coords="1000,330,1470,400" href="3.微博点赞评论转发折线图.html" onFocus="this.blur();">
+    <area shape="rect" coords="1100,460,1470,530" href="4.发微博时间雷达图.html" onFocus="this.blur();">
+    <area shape="rect" coords="1600,130,2000,200" href="5.粉丝饼状图.html" onFocus="this.blur();">
+    <area shape="rect" coords="1600,270,2000,340" href="6.粉丝年龄段分布.html" onFocus="this.blur();">
+    <area shape="rect" coords="1600,400,2000,470" href="../../fans-map/examples/7.粉丝地区分布.html" onFocus="this.blur();">
+</map>
+
+<script type="text/javascript">
+
+        adjust();
+        var timeout = null;//onresize触发次数过多，设置定时器
+        window.onresize = function () {
+            clearTimeout(timeout);
+            timeout = setTimeout(function () { window.location.reload(); }, 100);//页面大小变化，重新加载页面以刷新MAP
+        }
+
+        //获取MAP中元素属性
+        function adjust() {
+            var map = document.getElementById("CribMap");
+            var element = map.childNodes;
+            var itemNumber = element.length / 2;
+            for (var i = 0; i < itemNumber - 1; i++) {
+                var item = 2 * i + 1;
+                var oldCoords = element[item].coords;
+                var newcoords = adjustPosition(oldCoords);
+                element[item].setAttribute("coords", newcoords);
+            }
+            var test = element;
+        }
+
+        //调整MAP中坐标
+        function adjustPosition(position) {
+            var pageWidth = document.body.clientWidth;//获取页面宽度
+            var pageHeith = document.body.clientHeight;//获取页面高度
+
+            var imageWidth = 2106;	//图片的长宽
+            var imageHeigth = 1440;
+
+            var each = position.split(",");
+            //获取每个坐标点
+            for (var i = 0; i < each.length; i++) {
+                each[i] = Math.round(parseInt(each[i]) * pageWidth / imageWidth).toString();//x坐标
+                i++;
+                each[i] = Math.round(parseInt(each[i]) * pageHeith / imageHeigth).toString();//y坐标
+            }
+            //生成新的坐标点
+            var newPosition = "";
+            for (var i = 0; i < each.length; i++) {
+                newPosition += each[i];
+                if (i < each.length - 1) {
+                    newPosition += ",";
+                }
+            }
+            return newPosition;
+        }
+
+    </script>
+</body>
+</html>
